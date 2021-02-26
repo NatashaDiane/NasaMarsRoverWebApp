@@ -15,11 +15,11 @@ import com.applicationmarsrover.service.MarsRoverApiService;
 @Controller
 public class RootController {
 	
-	//Autowired is Spring creating an instance on our behalf, now we just have to ask spring to give us that object it instantiated
+	
 	@Autowired
 	private MarsRoverApiService marsService;
 	
-	//we are reading data therefore we are using the http get request
+	
 	@GetMapping("/")
 	public String getHomePage (ModelMap model, @RequestParam(required=false) String marsRoverData, 
 			@RequestParam(required=false) Integer marsSol) {
