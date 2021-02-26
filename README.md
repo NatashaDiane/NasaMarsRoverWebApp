@@ -1,4 +1,4 @@
-# NasaMarsRoverWebApp - A SpringBoot Application
+# NasaMarsRoverWebApp - A SpringBoot App
 
 Application characteristics: Integrates with one of NASA's open API's (Mars Rover Photos) to
 get Images taken by all the rovers on Mars.
