@@ -1,0 +1,52 @@
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<title>Mars Rover Web App</title>
+<link rel="stylesheet" href="css/main.css"/>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
+
+</head>
+<body>
+<div class="banner-area">
+	<div class="container text-center">
+		<h2>Mars Rover Photos</h2>
+		
+		<iframe src='https://mars.nasa.gov/layout/embed/image/insightweather/' width='800' height='530'  scrolling='no' frameborder='0'></iframe>
+		
+		<form method="get" id="form">
+			<input type="hidden" id="marsRoverData" name="marsRoverData" value=""/>
+			<div class="btn-group btn-group-lg" role="group" style="margin: 2em">
+			  <button type="button" class="btn btn-secondary" id="roverSpirit">Spirit</button>
+			  <button type="button" class="btn btn-secondary" id="roverOpportunity">Opportunity</button>
+			  <button type="button" class="btn btn-secondary" id="roverCuriosity">Curiosity</button>
+			</div>
+			
+			<div class="form-group">
+			 	<label for="marsSol" class="col-form-label col-form-label-lg">Mars Sol:</label> 
+			 	<input type="number" id="marsSol" min="0" class="form-control" name="marsSol" value="1"/>
+			 </div>
+			 
+			 <button type="submit" class="btn-primary btn-lg">Submit</button>
+			 
+		</form>
+		
+		<div th:each="index : ${#numbers.sequence(0,photoData.photos.size(), 4)}" class="row" style="margin-bottom: 2em">
+			<div class="col-sm" th:if="${index < photoData.photos.size()}">
+				<img th:src="${photoData.photos[index].imgSrc}" class="img-fluid"/>
+			</div>
+			<div class="col-sm" th:if="${index+1 < photoData.photos.size()}">
+				<img th:src="${photoData.photos[index+1].imgSrc}" class="img-fluid"/>
+			</div>
+			<div class="col-sm" th:if="${index+2 < photoData.photos.size()}">
+				<img th:src="${photoData.photos[index+2].imgSrc}" class="img-fluid"/>
+			</div>
+			<div class="col-sm" th:if="${index+3 < photoData.photos.size()}">
+				<img th:src="${photoData.photos[index+3].imgSrc}" class="img-fluid"/>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="js/main.js"></script>
+
+</body>
+</html>
