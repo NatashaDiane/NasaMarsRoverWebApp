@@ -8,7 +8,7 @@ import com.applicationmarsrover.response.MarsRoverApiResponse;
 
 @Service
 public class MarsRoverApiService {
-	private static final String API_KEY = "Q2qptj4dVYgiSfy5O7zvvKpynuZdzvOgDmbcxvo5";
+	private static final String API_KEY = "YourApiKey";
 	
 	public MarsRoverApiResponse getData(String roverName, Integer marsSol) {
 		//Rest template comes from Spring web its a way to issue http requests and take the data and map it back into our own java objects
